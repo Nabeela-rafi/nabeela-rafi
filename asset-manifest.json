@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/nabeela-rafi/static/css/main.fbaacf34.css",
+    "main.js": "/nabeela-rafi/static/js/main.73cefe1f.js",
+    "static/js/453.1407b060.chunk.js": "/nabeela-rafi/static/js/453.1407b060.chunk.js",
+    "static/media/locals.png": "/nabeela-rafi/static/media/locals.be0b160210dc56866f76.png",
+    "static/media/locals2.png": "/nabeela-rafi/static/media/locals2.7f8d11d6c882709f45b4.png",
+    "static/media/profile.jpg": "/nabeela-rafi/static/media/profile.ad6ab62ce2627942cf60.jpg",
+    "static/media/ceca.png": "/nabeela-rafi/static/media/ceca.5b0d36f7d87572c07615.png",
+    "static/media/buildng.jpg": "/nabeela-rafi/static/media/buildng.d350163569d067061442.jpg",
+    "static/media/travel.PNG": "/nabeela-rafi/static/media/travel.7ea6b5a6c1396f363881.PNG",
+    "static/media/back.jpg": "/nabeela-rafi/static/media/back.5f78417afe64db3c0d8e.jpg",
+    "static/media/about.webp": "/nabeela-rafi/static/media/about.2cd98231e7352899733d.webp",
+    "static/media/logo.svg": "/nabeela-rafi/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/nabeela-rafi/index.html",
+    "main.fbaacf34.css.map": "/nabeela-rafi/static/css/main.fbaacf34.css.map",
+    "main.73cefe1f.js.map": "/nabeela-rafi/static/js/main.73cefe1f.js.map",
+    "453.1407b060.chunk.js.map": "/nabeela-rafi/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbaacf34.css",
+    "static/js/main.73cefe1f.js"
+  ]
+}
