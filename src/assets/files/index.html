@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.cdnfonts.com/css/rockoflf" rel="stylesheet">    
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <style>
+        @font-face {
+            font-family: myFirstFont;
+            src: url("font/rocko/RockoFLF.ttf");
+        }        
+        * {
+            font-family: myFirstFont !important;
+            box-sizing: border-box;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+        /* Global styles */
+        body {
+            /* font-family: Arial, sans-serif; */
+            font-family: myFirstFont;
+            overflow-x: hidden;            
+        }
+        /* Header with transparent background logo */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0px 20px 0px;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+        }
+        header #logo_header {
+            flex-basis: 50%;
+            padding: 10px 10px 10px 125px;
+        }
+        header #organge_button {
+            padding: 10px 125px 10px 10px;
+            flex-basis: 50%;
+            justify-content: right;
+            display: flex;
+        }
+        header #organge_button img {
+            width: 100px;
+            height: 50px;
+            padding: 10px 20px 10px 10px;
+            flex-shrink: 0;
+        }
+        .hero #hero_image {
+            display: flex;
+            align-items: flex-end;
+        }
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 150;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+        #about_us_round_pic_section {
+            background-color: #171316;
+            height: 590px;
+            display: flex;
+            flex-direction: row;
+            padding: 40px;
+        }
+        #about_us_round_pic_section #done {
+            background-color: #171316;
+            flex-basis: 50%;
+            padding: 60px;
+            overflow: hidden;
+        }
+        #about_us_round_pic_section #done #about_heading {
+            background-color: #171316;
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        #about_us_round_pic_section #done #paragraph_about_us {
+            background: #171316;
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+        #about_us_round_pic_section #done #paragraph_about_us p {
+            color: rgba(230, 231, 232, 0.95);
+            font-family: Lato;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: lighter;
+            line-height: 107%;
+            /* 51.024px */
+            letter-spacing: 3.36px;
+            padding: 20px 100px 10px 10px;
+        }
+        #about_us_round_pic_section #done #line_us_heading {
+            background: #171316;
+            width: 100%;
+            color: white;
+            display: flex;
+            overflow: hidden;
+        }
+        #about_us_round_pic_section #done #line_us_heading #blue_line {
+            background: #356FFF;
+            width: 130px;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 217px;
+            overflow: hidden;
+        }
+        /* #about_us_round_pic_section #done #line_us_heading #blue_line #us{
+} */
+        #about_us_round_pic_section #done div h1 {
+            color: #E6E7E8;
+            font-family: RockoFLF;
+            font-size: 55px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 106.3%;
+            /* 159.45px */
+            letter-spacing: 10.5px;
+            overflow: hidden;
+        }
+        #about_us_round_pic_section #dtwo {
+            background-color: #171316;
+            ;
+            flex-basis: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        #about_us_round_pic_section #dtwo img {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 600px;
+            background: #460002;
+            padding: 60px 30px 60px 30px;
+        }
+        .left {
+            flex: 1;
+            display: flex;
+            align-items: left;
+            flex-direction: column;
+            position: relative;
+            background-color: greenyellow;
+        }
+        .left #heading_about_us h2 {
+            /* background: red; */
+            display: flex;
+            width: 35%;
+            flex-wrap: wrap;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 106.3%;
+            /* 159.45px */
+            letter-spacing: 4px;
+            padding: 10px;
+            background-color: aquamarine;
+        }
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            background-color: fuchsia;
+        }
+        .rounded-picture {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-image: url(asserts/about_us.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+            background-color: #356FFF;
+        }
+        .bold_blue_line {
+            border: 10px solid #356FFF;
+            border-radius: 200px;
+            background: #356FFF;
+            width: 55%;
+            height: 40px;
+        }
+        .about_digital_marketing_text {
+            background: #171316;
+            padding: 10px 212px 10px 10px;
+        }
+        @media screen and (max-width: 600px) {
+            .seo_beyong_heading_section #SEO_one #SEO_and_sign {
+                margin-top: -13vh !important;
+                font-size: 2.2rem !important;
+                width: 10% !important;
+                height: 20% !important;
+            }
+        }
+        @media screen and (max-width: 450px) {
+            .seo_beyong_heading_section #SEO_one #SEO_and_sign {
+                margin-top: -14vh !important;
+                font-size: 1.5rem !important;
+                width: 9% !important;
+                height: 18% !important;
+            }
+            .SEO_beyond {
+                margin-top: -18vh !important;
+            }
+        }
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-color: #171316;
+            /* Replace with your logo image */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        .hero #hero_heading {
+            width: 60%;
+            color: white;
+            letter-spacing: 8px;
+        }
+        .hero #hero_heading h1 #heading_where {
+            font-size: 70px;
+        }
+        .hero #hero_heading h1 {
+            font-size: 70px;
+            padding: 140px;
+            line-height: 100px;
+            text-align: center;
+        }
+        .hero #hero_image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+        .hero #hero_image img {
+            padding: 0px;
+            width: 70%;
+            height: 20%;
+        }
+        .hero #hero_image svg {
+            position: absolute;
+            bottom: 18%;
+            right: 20%;
+        }
+        .hero button {
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 10px 20px;
+            position: absolute;
+            cursor: pointer;
+            bottom: 0;
+            width: 100%;
+            border: 0;
+        }
+        /* About Us Section */
+        .seo_beyong_heading_section {
+            height: 140vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 1s;
+            padding: 90px;
+        }
+        .seo_beyong_heading_section #SEO_one {
+            /* background-color: #460002; */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .seo_beyong_heading_section #SEO_one h2 {
+            /* background-color:greenyellow; */
+            color: rgba(22, 22, 22, 0.95);
+            font-family: RockoFLF;
+            font-size: 130px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 106.3%;
+            /* 279.569px */
+            letter-spacing: 2.63px;
+            padding: 0px 15px 0px 0px;
+            overflow: hidden;
+        }
+        .seo_beyong_heading_section #SEO_one #SEO_and_sign {
+            background-color: cornsilk;
+            color: black;
+            border-radius: 100%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+            font-size: 45px;
+            padding: 10px;
+            font-weight: bolder;
+            overflow: hidden;
+        }
+        .seo_beyong_heading_section #SEO_paragraph {
+            /* background-color: #8b1b1f; */
+            padding: 120px 500px 60px 0px;
+            overflow: hidden;
+        }
+        .seo_beyong_heading_section #SEO_paragraph p {
+            color: black;
+            overflow: hidden;
+        }
+        .creativez_web_design {
+            height: 140vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            /* background-color:blue; */
+            transition: background-color 1s;
+            padding: 90px;
+            border: solid black;
+            border-width: 1px 0px;
+            overflow: hidden;
+        }
+        .creativez_web_design #SEO_one {
+            /* background-color: #460002; */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .creativez_web_design #web_creative {
+            width: 324px;
+            height: 104px;
+            flex-shrink: 0;
+            border-radius: 190px;
+            border: 4px solid #000;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            overflow: hidden;
+        }
+        .creativez_web_design #web_creative h2 {
+            color: rgba(22, 22, 22, 0.95);
+            font-family: RockoFLF;
+            font-size: 100px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 106.3%;
+            letter-spacing: 1.7px;
+            overflow: hidden;
+        }
+        .creativez_web_design #SEO_one h2 {
+            /* background-color:greenyellow; */
+            color: rgba(22, 22, 22, 0.95);
+            font-family: RockoFLF;
+            font-size: 120px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 126.3%;
+            /* 279.569px */
+            letter-spacing: 2.63px;
+            padding: 0px 15px 0px 0px;
+            overflow: hidden;
+            margin-top: auto;
+        }
+        .creativez_web_design #SEO_one #SEO_and_sign {
+            background-color: cornsilk;
+            color: black;
+            border-radius: 100%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+            font-size: 45px;
+            padding: 10px;
+            font-weight: bolder;
+            overflow: hidden;
+        }
+        .creativez_web_design #SEO_paragraph {
+            padding: 80px 10px 60px 10px;
+        }
+        .creativez_web_design #SEO_paragraph p {
+            color: black;
+        }
+        /* SEO & Beyond Section */
+        .seo-beyond {
+            height: 130vh;
+            background-color: #FF7C00;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1s;
+        }
+        .creative-web {
+            height: 140vh;
+            background-color: #FF7C00;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1s;
+        }
+        /* Social Amplification Section */
+        .social-amplification {
+            flex-direction: column;
+            padding: 90px;
+            height: 140vh;
+            background-color: #FF7C00;
+            color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1s;
+        }
+        .social-amplification #SEO_one {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .social-amplification #SEO_one #marketing_box {
+            width: 495px;
+            height: 150px;
+            flex-shrink: 0;
+            border-radius: 190px;
+            border: 19px solid #D9D9D9;
+        }
+        .social-amplification #SEO_one h2 {
+            /* background-color:greenyellow; */
+            color: rgba(22, 22, 22, 0.95);
+            font-family: RockoFLF;
+            font-size: 130px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 106.3%;            
+            letter-spacing: 2.63px;
+            padding: 0px 15px 0px 0px;
+        }
+        .social-amplification #SEO_paragraph p {
+            color: black;
+            margin: 20% 0 2% -15%;
+        }
+        /* Digitalization Deluxe Section */
+        .digitalization-deluxe {
+            height: 140vh;
+            background-color: #000000;
+            color: #E6E7E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1s;
+            flex-direction: column;
+            padding: 90px;
+            margin: 0 0 0 0;            
+        }
+        .social-amplification #SEO_paragraph {
+            padding: 120px 500px 60px 0px;
+        }
+        .digitalization-deluxe #SEO_one {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;  
+            overflow: hidden;                   
+        }
+        .digitalization-deluxe #SEO_one #marketing_box {
+            width: 495px;
+            height: 120px;
+            flex-shrink: 0;
+            margin: 12% 0 0 0;
+            border-radius: 190px;
+            border: 15px solid #D9D9D9;
+            margin-top: 10px;
+        }
+        .digitalization-deluxe #SEO_one h2 {
+            /* background-color:greenyellow; */
+            color: #E6E7E8;
+            font-family: RockoFLF;
+            font-size: 130px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 106.3%;
+            /* 279.569px */
+            letter-spacing: 2.63px;
+            padding: 0px 15px 0px 0px;
+            overflow: hidden;
+        }
+        .digitalization-deluxe #SEO_paragraph {
+            padding: 20% 62.5% 15% 0%;
+        }
+        .digitalization-deluxe #SEO_paragraph p {
+            color: #E6E7E8;
+            padding: 30% -10% 0 0;
+        }
+        /* Creative Design Section */
+        .contact_footer {
+            height: 140vh;
+            background-color: green;
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1s;
+        }
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        #Meets_color {
+            background: #FF7C00;
+            border-radius: 50px;
+            color: black;
+            padding: 5px 20px 5px 20px;
+        }
+        /* For Bigger Screens */
+        @media only screen and (min-width: 2000px) {
+            .hero #hero_image img {
+                height: 500px;
+                ;
+            }
+            .SEO_beyond {
+                margin-top: -6rem;
+            }
+            #SEO_and_sign {
+                margin-top: -3rem;
+            }
+        }
+        /* For Responsiveness */
+        @media only screen and (max-width: 1200px) {
+            /* Header with transparent background logo */
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 15px 0px 15px 0px;
+                z-index: 100;
+                display: flex;
+                justify-content: space-between;
+            }
+            header #logo_header {
+                width: 50%;
+                padding: 10px 10px 10px 60px;
+            }
+            header #organge_button {
+                padding: 10px 60px 10px 10px;
+                width: 50%;
+                justify-content: right;
+                display: flex;
+            }
+            header #organge_button img {
+                width: 100px;
+                height: 50px;
+                padding: 10px 20px 10px 10px;
+                flex-shrink: 0;
+            }
+            .hero {
+                padding: 10px;
+                text-align: center;
+            }
+            .hero #hero_heading h1 {
+                padding: 10px;
+                line-height: 75px;
+            }
+            .hero #hero_heading h1 #heading_where {
+                font-size: 50px;
+            }
+            #Meets_color {
+                background: #FF7C00;
+                border-radius: 50px;
+                color: black;
+                padding: 5px 20px 5px 20px;
+            }
+            .hero #hero_image {
+                display: none;
+            }
+            .fixed-arrow{
+                width: 50%;
+                float:right;
+            }
+            #hero_image img
+            {
+                display: none;
+            }
+            .hero #hero_heading h1 {
+                font-size: 50px;
+            }
+            #about_us_round_pic_section {
+                flex-direction: column;
+                height: 700px;
+            }
+            #about_us_round_pic_section #done #about_heading {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            #about_us_round_pic_section #done #line_us_heading {
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            .seo_beyong_heading_section #SEO_one h2 {
+                font-size: 120px;
+                line-height: 10rem !important;
+            }
+            #SEO_and_sign {
+                margin-top: -1rem !important;
+            }
+            .social-amplification #SEO_paragraph {
+                padding: 87px 260px 60px 0px;
+            }
+            .social-amplification #SEO_one h2 {
+                font-size: 13vw !important;
+                line-height: 130%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .digitalization-deluxe #SEO_one #marketing_box{                width: 37% !important;
+                width: 29% !important;
+                height: 68px !important;
+                margin: 2% 0 0 0;
+                border: 12px solid #D9D9D9 !important;
+            }            
+            .social-amplification #SEO_one #marketing_box {
+                width: 49% !important;
+                height: 15vh !important;
+                border: 8px solid #D9D9D9 !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            * {
+                overflow-x: hidden;
+            }
+            header {
+                flex-direction: column;
+                flex-basis: 100%;
+                position: absolute;
+            }
+            .digitalization-deluxe #SEO_paragraph p {
+            color: #E6E7E8;
+            padding: 75% 0 0 0;
+        }
+            header #logo_header {
+                width: 100%;
+                padding: 30px 0px 30px 0px;
+                display: flex;
+                justify-content: center;
+            }
+            header #logo_header img {
+                width: 68px;
+                height: 78px;
+            }
+            header #organge_button {
+                padding: 10px 5px 10px 10px;
+                width: 100%;
+                justify-content: center;
+                display: flex;
+            }
+            header #organge_button img {
+                width: 124px;
+                height: 36px;
+                padding: 10px 10px 10px 10px;
+                flex-shrink: 0;
+            }
+            .hero {
+                padding: 0;
+                /* background-image: url(asserts/Background.jpg); */
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: right;
+            }
+            .hero #hero_heading {
+                width: 100%;
+                color: white;
+                letter-spacing: 2px;
+                font-size: 20px;
+            }
+            .hero #hero_heading h1 {
+                font-size: 24px;
+                line-height: 43px;
+            }
+            .hero #hero_heading h1 #heading_where {
+                font-size: 20px;
+            }
+            .hero #hero_heading h1 #Meets_color {
+                color: white;
+                padding: 5px;
+                font-size: 17px;
+            }
+            #about_us_round_pic_section {
+                flex-direction: column;
+                height: 592px;
+                /* background: rgb(177, 5, 5); */
+                justify-content: center;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+            }
+            #about_us_round_pic_section #done {
+                background: #171316;
+                padding: 0;
+                flex-basis: 60%;
+                overflow: hidden;
+            }
+            #about_us_round_pic_section #dtwo {
+                display: none;
+            }
+            #about_us_round_pic_section #done #paragraph_about_us p {
+                padding: 30px 10px 30px 10px;
+                line-height: 115.3%;
+            }
+            .creativez_web_design {
+                padding: 2% 2% 2% 2%;
+            }
+            .creativez_web_design #web_creative {
+                width: 45%;
+                height: 8%;
+            }
+            .creativez_web_design #web_creative h2 {
+                font-size: 11vw;
+                letter-spacing: 0.2em;
+            }
+            .creativez_web_design #SEO_one h2 {
+                font-size: 12vw;
+                line-height: 130% !important;
+                letter-spacing: 0.3em;
+            }
+            .creativez_web_design #SEO_one #SEO_and_sign { 
+                width: 15vw;
+                height: 15vw;
+                font-size: 8vw;
+            }
+            #SEO_and_sign {
+                width: 8vw !important;
+                height: 7vh !important;
+                margin-top: -7vh !important;                
+            }
+            .seo_beyong_heading_section #SEO_one h2 {
+                /* background-color: greenyellow; */
+                color: rgba(22, 22, 22, 0.95);
+                /* font-family: RockoFLF; */
+                font-size: 12vw !important;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 130.3% !important;
+                letter-spacing: 2.63px;
+                padding: 0px 15px 0px 0px;
+            }
+            .SEO_beyond {
+                margin-top: -9rem;
+            }
+            .social-amplification {
+                padding: 5% 2% 5% 2%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .social-amplification #SEO_one h2 {
+                font-size: 11vw !important;
+                line-height: 130%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .social-amplification #SEO_paragraph p {
+                display: flex;
+                position: absolute;
+                margin-left: -40px !important;
+                font-size: 5vw;
+                color: black;
+            }
+            #our_promise_section{
+                flex-direction: column;
+                height: 100vh;
+            }
+            #our_promise_section #our_promise_heading {
+                flex-basis: 50%;
+                background: #356FFF;
+                height: 60vh !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #E8E8E8;
+                font-family: RockoFLF;
+                font-size: 40px !important;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 87.3%;
+                /* 138.807px */
+                letter-spacing: 1.59px;
+            }
+            #our_promise_section #our_promise_paragraph {
+                flex-basis: 50%;
+                background: #FF7C00;
+                height: 60vh !important;
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                justify-content: center;
+                color: rgba(6, 6, 23, 0.80);
+                font-family: Lato;
+                font-size: 11px !important;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 118.3%;
+                /* 47.32px */
+                letter-spacing: 2.8px;
+                padding: 20px !important;
+            }
+            #double_quote {
+                color: #E8E8E8;
+                font-family: RockoFLF;
+                font-size: 80px !important;
+                font-style: normal;
+                height: 20px;
+                font-weight: 700;
+                line-height: 60%;
+                /* 281.106px */
+                letter-spacing: 3.2px;
+            }
+            .digitalization-deluxe #SEO_one #marketing_box{                width: 37% !important;
+                height: 32px !important;
+                margin: 2% 0 0 0;
+                border: 8px solid #D9D9D9 !important;
+            }
+            .social-amplification #SEO_one #marketing_box {
+                width: 49% !important;
+                height: 8vh !important;
+                border: 8px solid #D9D9D9 !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        /* -------------------------------------------------------END OF MEDIA QUERY -----------------------------------------  */
+        .social-amplification {
+            padding: 2% 12% 19% 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .social-amplification #SEO_one h2 {
+            font-size: 9vw;            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .social-amplification #SEO_one #marketing_box {
+            width: 34%;            
+            height: 14vh;            
+            border: 0.7vw solid #D9D9D9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .seo_beyong_heading_section {
+            padding: 5% 2%;            
+        }
+        .digitalization-deluxe {
+            flex-direction: column;
+            padding: 20px 0px 0px 84px;
+            /* height: 146vh; */
+            height: auto;
+            /* background-color: #FF7C00; */
+            /* color: rgb(255, 255, 255); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1s;
+            border-bottom: 1px solid black;
+        }
+        .digitalization-deluxe #SEO_one h2 {
+            font-size: 10vw;            
+            line-height: 130%;            
+        }
+        .digitalization-deluxe #SEO_one {
+            width: 100%;   
+            height: 100%;         
+            margin-left: -92px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .digitalization-deluxe #SEO_one #marketing_box {
+            width: 20%;
+            height: 100px;
+            margin: 2% 0 0 0;
+            border: 15px solid #D9D9D9;
+        }
+        .digitalization-deluxe #SEO_paragraph {
+            margin: 3rem -3.5rem 3rem -2rem;
+        }
+        .seo_beyong_heading_section #SEO_one {
+            width: 100%;
+            padding: 2% 1% 1% 6%;
+            display: flex;
+            align-items: center;
+        }
+        .seo_beyong_heading_section #SEO_one h2 {
+            /* background-color: greenyellow; */
+            color: rgba(22, 22, 22, 0.95);
+            /* font-family: RockoFLF; */
+            font-size: 11vw;
+            height: 13rem;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 80.3%;
+            letter-spacing: 2px;
+            padding: 5px 15px 0px 0px;
+        }
+        .seo_beyong_heading_section #SEO_one #SEO_and_sign {
+            background-color: cornsilk;
+            color: black;
+            border-radius: 100%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            font-size: 45px;
+            padding: 10px;
+            font-weight: bolder;
+            overflow: hidden;
+        }
+        .seo_beyong_heading_section #SEO_paragraph {
+            margin-top: 10%;
+            padding: 2% 1% 1% 6%;
+        }
+        .seo_beyong_heading_section #SEO_paragraph p {
+            color: black;
+        }
+        .container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .left {
+            order: 2;
+        }
+        .right {
+            order: 1;
+            margin-top: 20px;
+        }
+        .blue-line {
+            display: none;
+        }
+        /* Slider */
+        /* global */
+        #image_global {
+            width: 100%;
+        }
+        #card_main_headings {
+            /* margin: 0.7rem 0; */
+            color: black;
+        }
+        /* complete_box */
+        .complete_box {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            overflow: auto;
+        }
+        .box_cards {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: grid;
+            grid-template-columns: repeat(6, 400px);
+            grid-gap: 20px;
+            pointer-events: none;
+        }
+        .single_card {
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 10px;
+            overflow: none;
+            box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.2);
+            background: #3C3B3A;
+        }
+        .card__content {
+            color: rgb(139, 137, 137);
+            padding: 10px;
+            background: #3C3B3A;
+        }
+        #our_promise_section {
+            background: red;
+            display: flex;
+            padding: 0;
+        }
+        #our_promise_section #our_promise_heading {
+            flex-basis: 50%;
+            background: #356FFF;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8E8E8;
+            font-family: RockoFLF;
+            font-size: 70px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 87.3%;
+            /* 138.807px */
+            letter-spacing: 1.59px;
+        }
+        #our_promise_section #our_promise_heading:hover {
+            background: #1A1A1B;
+            transition: 1s;
+        }
+        #our_promise_section #our_promise_paragraph {
+            flex-basis: 50%;
+            background: #FF7C00;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            color: rgba(6, 6, 23, 0.80);
+            font-family: Lato;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 118.3%;
+            /* 47.32px */
+            letter-spacing: 2.8px;
+            padding: 76px;
+        }
+        #our_promise_section #our_promise_paragraph:hover {
+            transition: 1s;
+            background: #DBDBDB;
+        }
+        #double_quote {
+            color: #E8E8E8;
+            font-family: RockoFLF;
+            font-size: 100px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 85%;
+            /* 281.106px */
+            letter-spacing: 3.22px;
+        }
+        #our_promise_paragraph p {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Responsive Navbar Slide -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content"><a href="#">About</a><a href="#">Services</a><a
+                href="#">Clients</a><a href="#">Contact</a></div>
+    </div>
+    <!-- Navbar Header Done Responsiveness-->
+    <header>
+        <div id="logo_header">
+            <img src="asserts/logo.png" alt="Logo" width="38" height="48">
+        </div>
+        <div id="organge_button">
+            <img height="100px" title="Navbar" onclick="openNav()" src="asserts/Rectangle 3.png">
+        </div>
+    </header>
+    <!-- Section 1 Start-->
+    <section class="hero">
+        <div id="hero_heading">
+            <h1>
+                <span id="heading_where">Where</span><br> Imagination <span id="Meets_color">Meets</span>&nbsp;Pixels
+            </h1>
+        </div>
+        <div id="hero_image">
+            <!-- <img src="asserts/Mask group.png" alt="MASK" width="auto" height="450px"> -->
+            <picture>
+                <!-- Define the default image for smaller screens -->
+                <source srcset="asserts/Mask group.png" media="(max-width: 2500px)" width="auto" height="450px">
+                <!-- Use the default image for browsers that do not support the <picture> element -->
+                <img id="responsive-image" src="asserts/Mask group.png" alt="Responsive Image">
+            </picture>
+            <svg width="120" height="120" viewBox="0 0 222 252" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="111" cy="111" r="111" fill="#356FFF" />
+            </svg>
+        </div>
+        <button onclick="scrollToSection('about_us_round_pic_section')"><img src="asserts/down_arrow.png"></button>
+    </section>
+    <!--Section 1 End-->
+    <!-- Section 2 Start -->    
+    <!-- About US Section -->
+    <section id="about_us_round_pic_section">
+        <!-- Inner Section 1 About Us Text-->
+        <div id="done">
+            <!-- about text division -->
+            <div id="about_heading">
+                <h1>About</h1>
+            </div>
+            <!-- blue line and us text division -->
+            <div id="line_us_heading">
+                <div id="blue_line"></div>
+                <h1 id="us">Us</h1>
+            </div>
+            <!-- paragraph about us division -->
+            <div id="paragraph_about_us">
+                <p>Welcome to Ceca Media, where digital dreams come to life. We are more than an agency – we are
+                    creators of digital realms that tell your story.</p>
+            </div>
+        </div>
+        <!-- Inner Section 2 image-->
+        <div id="dtwo">
+            <img src="asserts/about_us.png">
+        </div>
+    </section>
+    <!--Section 2 End-->
+    <!-- Section 3 Start -->
+    <div class="fixedDiv">
+        <div 
+            style="position:fixed;color:black;bottom:0;right:0; padding:20px 20px; margin:25px 25px;z-index: 999; cursor: pointer;" onclick="openModal()">
+            <svg class='fixed-arrow' xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 138 138" fill="white">
+                <path
+                    d="M120.29 23.143C111.191 13.0278 99.2973 5.83794 86.1124 2.48246C72.9275 -0.873024 59.0436 -0.243373 46.2166 4.29179C33.3895 8.82694 22.1954 17.0639 14.0497 27.9611C5.90397 38.8583 1.17258 51.9262 0.453819 65.5124C-0.264938 79.0986 3.06121 92.5928 10.0117 104.289C16.9621 115.984 27.2247 125.357 39.5016 131.22C51.7786 137.083 65.5184 139.174 78.9838 137.228C92.4491 135.283 105.035 129.388 115.15 120.289C128.714 108.089 136.876 90.9991 137.84 72.7806C138.803 54.5621 132.491 36.7069 120.29 23.143ZM93.523 93.4816C91.9191 93.3791 90.4191 92.6526 89.3443 91.4577C88.2694 90.2628 87.7053 88.6945 87.7725 87.0887L89.1542 59.2454L43.9567 99.901C42.7698 100.969 41.2075 101.521 39.6134 101.437C38.0192 101.352 36.5239 100.638 35.4563 99.4513C34.3888 98.2645 33.8364 96.7021 33.9207 95.108C34.005 93.5139 34.7192 92.0186 35.906 90.951L80.6561 50.6979L53.7587 49.2749C52.1484 49.1897 50.6379 48.4684 49.5595 47.2695C48.4810 46.0706 47.9230 44.4924 48.0082 42.8821C48.0934 41.2718 48.8148 39.7613 50.0137 38.6828C51.2126 37.6044 52.7908 37.0464 54.4011 37.1316L102.3 39.7874L99.8519 87.7887C99.8102 88.5781 99.6134 89.3515 99.2727 90.0648C98.9321 90.7781 98.4543 91.4174 97.8666 91.946C97.2789 92.4747 96.5928 92.8824 95.8475 93.1458C95.1022 93.4093 94.3124 93.5234 93.523 93.4816Z"
+                    fill="white" />
+            </svg>            
+        </div>
+    </div>
+    <section id="seo_beyong" class="seo_beyong_heading_section">
+        <div id="SEO_one">
+            <h2>S.E.O</h2>
+            <div id="SEO_and_sign" style="">&amp;</div>
+        </div>
+        <div id="SEO_one" class="SEO_beyond">
+            <h2>Beyond</h2>
+        </div>
+        <div id="SEO_paragraph">
+            <p>Get ready to conquer top rankings. We optimize not just for search engines, but for your business
+                success.</p>
+        </div>
+    </section>
+    <!-- Section 3 End -->
+    <!-- Creativez web Design Section -->
+    <section id="creative-web" class="creativez_web_design">
+        <!-- Creative -->
+        <div id="SEO_one">
+            <h2>Creative</h2>
+        </div>
+        <!-- web -->
+        <div id="web_creative">
+            <h2>web</h2>
+        </div>
+        <!-- Design -->
+        <div id="SEO_one">
+            <h2>Design</h2>
+        </div>
+        <div id="SEO_paragraph">
+            <p>Your website is more than an online showcase. It's your creative haven in the digital universe, designed
+                for lasting impressions.</p>
+        </div>
+    </section>
+    <!-- Social Amplification Section -->
+    <section id="social-amplification" class="social-amplification">
+        <!-- Social -->
+        <div id="SEO_one">
+            <h2>Social</h2>
+            <div id="marketing_box"></div>
+        </div>
+        <!-- Amplification -->
+        <div id="SEO_one">
+            <h2>Amplification</h2>
+        </div>
+        <div id="SEO_paragraph">
+            <p>Let the world hear what you have to say. Our social strategies are louder than applause.</p>
+        </div>
+    </section>
+    <!-- Digitalization Deluxe Section -->
+    <section id="digitalization-deluxe" class="digitalization-deluxe">
+        <!-- Social -->
+        <div id="SEO_one" style="margin-top: 5rem;">
+            <h2>Digitalization</h2>
+        </div>
+        <!-- Amplification -->
+        <div id="SEO_one" style="display: flex; flex-direction:row; gap:3%;">
+            <div id="marketing_box"></div> 
+            <div><h2>Deluxe</h2></div>           
+        </div>
+        <div id="SEO_paragraph" style="margin-top: -10rem;">
+            <p>Let the world hear what you have to say. Our social strategies are louder than applause.</p>
+        </div>
+    </section>
+    <section style="width:100%;
+    background: rgb(255, 255, 255);
+    ">
+        <marquee behavior="infinite" direction="right" scrollamount="15" style="width:100%;background:#FF7C00;">
+            <h1 id="card_main_headings" style="padding:20px;color:rgb(0, 0, 0);text-align: center;">Work</h1>
+        </marquee>
+        <div class="complete_box">
+            <div class="box_cards">
+                <div class="single_card">
+                    <img id="image_global"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_X3kCeWYJuVS-vouoQhCfcRWKwbBX6RG1bA&usqp=CAU"
+                        alt=""width="398" height="265" />
+                    <div class="card__content">
+                        <h1 id="card_main_headings">Coderpad1</h1>
+                        <p>
+                            CoderPad is a simple yet powerful online technical assessment software that makes it easy to
+                            interview in the candidate's language of choice so hiring!
+                        </p>
+                    </div>
+                </div>
+                <div class="single_card">
+                    <img id="image_global"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-jt3d-_xLuJFSQPmo6Tqepn4_wtLlgb9RHA&usqp=CAU"
+                        alt="" width="398" height="265" />
+                    <div class="card__content">
+                        <h1 id="card_main_headings">Coderpad2</h1>
+                        <p>
+                            CoderPad is a simple yet powerful online technical assessment software that makes it easy to
+                            interview in the candidate's language of choice so hiring!
+                        </p>
+                    </div>
+                </div>
+                <div class="single_card">
+                    <img id="image_global"
+                        src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGqsuPapsSkvE1CmgIDKLzz7wae5kXblPhan-of6_uEBgiVuikb7SXAKJuhkEL-7I47Vg&usqp=CAU"
+                        alt="" width="398" height="265" />
+                    <div class="card__content">
+                        <h1 id="card_main_headings">Coderpad3</h1>
+                        <p>
+                            CoderPad is a simple yet powerful online technical assessment software that makes it easy to
+                            interview in the candidate's language of choice so hiring!
+                        </p>
+                    </div>
+                </div>
+                <div class="single_card">
+                    <img id="image_global"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8IO5pV7-yK2sN_BWo1UKij8xoRE9g2RoPHgqVD44wG0UAwXJyhPLGr4_-intJUVg-I0w&usqp=CAU
+            "
+                        alt="" width="398" height="265" />
+                    <div class="card__content">
+                        <h1 id="card_main_headings">Coderpad4</h1>
+                        <p>
+                            CoderPad is a simple yet powerful online technical assessment software that makes it easy to
+                            interview in the candidate's language of choice so hiring!
+                        </p>
+                    </div>
+                </div>
+                <div class="single_card">
+                    <img id="image_global"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykw4RpJXpvKdG2mioMW0HfzNjXfGtzS_ojZ3adk_IBqp3xSbSVBIv0jJ2khhML_sZv5s&usqp=CAU"
+                        alt="" width="398" height="265" />
+                    <div class="card__content">
+                        <h1 id="card_main_headings">Coderpad5</h1>
+                        <p>
+                            CoderPad is a simple yet powerful online technical assessment software that makes it easy to
+                            interview in the candidate's language of choice so hiring!
+                        </p>
+                    </div>
+                </div>
+                <div class="single_card">
+                    <img id="image_global"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX5G4dIuaf2GvJH8qrsqK8fJI8jcJbxo_SLQapss5k0fgcS0weQz8T2iL19MoQhBLzJQw&usqp=CAU"
+                        alt="" width="398" height="265" />
+                    <div class="card__content">
+                        <h1 id="card_main_headings">Coderpad6</h1>
+                        <p>
+                            CoderPad is a simple yet powerful online technical assessment software that makes it easy to
+                            interview in the candidate's language of choice so hiring!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <marquee behavior="infinite" direction="right" scrollamount="15" style="width:100%;background:#FF7C00;">
+            <h1 id="card_main_headings" style="padding:20px;color:rgb(0, 0, 0);text-align: center;">Work</h1>
+        </marquee>
+    </section>
+    <!-- Working Portfolio Section -->
+    <!-- OUR PROMISE SECTION -->
+    <section id="our_promise_section">
+        <div id="our_promise_heading">Our <br>
+            Promise</div>
+        <div id="our_promise_paragraph"><span id="double_quote">“</span>
+            <p>We are your partners in the digital journey. Together, we'll take off and set new standards in web design
+                and marketing. Our focus is on quality, innovation, and customer satisfaction. Discover the
+                possibilities that Ceca Media has in store for you </p>&nbsp; <span id="double_quote">“</span>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <footer style="color: black; position:relative; height:100vh;" id="contact_footer" class="contact_footer">
+        <p style="position: absolute; bottom:0; left: 8.5rem; font-family: Lato;" class="footer_copyright">This website is a property of Ceca Media Copyright</p>
+            <p style="position: absolute; bottom:0; right: 10rem;font-family: Lato;" class="footer_developed">Designed and Developed by Ceca Media</p>
+        <div class="footer_header_left">
+            <div class="header_left_contact" style="color: white;">Contact</div>
+            <div class="header_left_button"
+                style="color:black; display: flex; cursor: pointer; "onclick="openModal()">
+                <div style="width:40%; overflow-y:hidden;color: #000;">Us</div>
+                <div style="width: 40%;display:flex;justify-content: end;">
+                    <svg class="svg_arrow" width="60%" height="60%" viewBox="0 0 138 138" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M120.289 23.143C111.191 13.0278 99.297 5.83794 86.1121 2.48246C72.9272 -0.873024 59.0434 -0.243373 46.2163 4.29179C33.3893 8.82694 22.1951 17.0639 14.0494 27.9611C5.90373 38.8583 1.17234 51.9262 0.453575 65.5124C-0.265182 79.0986 3.06097 92.5928 10.0114 104.289C16.9619 115.984 27.2244 125.357 39.5014 131.22C51.7783 137.083 65.5182 139.174 78.9835 137.228C92.4489 135.283 105.035 129.388 115.15 120.289C128.714 108.089 136.876 90.9991 137.839 72.7806C138.803 54.5621 132.49 36.7069 120.289 23.143ZM93.5227 93.4816C91.9188 93.3791 90.4188 92.6526 89.344 91.4577C88.2692 90.2628 87.705 88.6945 87.7723 87.0887L89.154 59.2454L43.9564 99.901C42.7696 100.969 41.2072 101.521 39.6131 101.437C38.019 101.352 36.5237 100.638 35.4561 99.4513C34.3885 98.2645 33.8361 96.7021 33.9205 95.108C34.0048 93.5139 34.719 92.0186 35.9058 90.951L80.6559 50.6979L53.7584 49.2749C52.1481 49.1897 50.6376 48.4684 49.5592 47.2695C48.4808 46.0706 47.9228 44.4924 48.008 42.8821C48.0932 41.2718 48.8146 39.7613 50.0135 38.6828C51.2124 37.6044 52.7906 37.0464 54.4009 37.1316L102.3 39.7874L99.8517 87.7887C99.81 88.5781 99.6131 89.3515 99.2725 90.0648C98.9319 90.7781 98.454 91.4174 97.8663 91.946C97.2786 92.4747 96.5925 92.8824 95.8473 93.1458C95.102 93.4093 94.3121 93.5234 93.5227 93.4816Z"
+                            fill="black" />
+                    </svg>
+                </div>
+            </div>
+            <div class="footer_services" style="color:white; overflow-y:hidden;">Our Services <br> Our Referrals <br> Contact Us</div>
+        </div>
+        <!-- Button to open Popup -->
+        <div class="footer_header_right">
+            <div class="header_right" style="color:white;">Ready for your own digital success story? Let's collaborate
+                and
+                turn your
+                vision into reality. Contact us
+                today.</div>
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal Content -->
+                <div class="modal-content" style="background: lightgray;">
+                    <div style="overflow:hidden;">
+                        <span class="close" onclick="closeModal()" style="cursor: pointer;">&times;</span>
+                    </div>
+                    <div style="display:flex; justify-content: center; margin-bottom:20px;">
+                        <h2 style="color:black;margin-top: -40px;">TALK TO US</h2>
+                    </div>
+                    <input type="text" placeholder="E-mail"
+                        style=" border: 0; background:  #ededed; border-radius: 20px;padding: 10px 0px 10px 15px;margin-top: -38px; color: black;" />
+                    <input type="text" placeholder="Talk to us"
+                        style="height: 100px; border: 0; background: #ededed;border-radius: 20px; padding: 0 15px; color: black;" />
+                    <button type="submit"
+                        style="color:white;background: #356FFF;font-weight: bold; padding: 10px 0 10px 0; border: 0; border-radius: 20px;">Send</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer_right_social" style="position: absolute; bottom:30px; right:17rem;">
+            <div class="svg-container" >
+                <svg width="30" height="25" viewBox="0 0 46 36" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.00657134 7.04127C0.0899577 5.14586 0.90461 3.35564 2.28069 2.04383C3.65678 0.732022 5.48809 -0.000132442 7.39286 1.79702e-08H38.6071C40.5119 -0.000132442 42.3432 0.732022 43.7193 2.04383C45.0954 3.35564 45.91 5.14586 45.9934 7.04127L43.5686 8.38309L23 19.4138L2.43143 8.38309L0.00657134 7.04127ZM0 10.7804V28.6364C0 30.5893 0.778888 32.4623 2.16532 33.8432C3.55175 35.2242 5.43215 36 7.39286 36H38.6071C40.5679 36 42.4483 35.2242 43.8347 33.8432C45.2211 32.4623 46 30.5893 46 28.6364V10.7804L45.1359 11.2598L23.7787 22.7144C23.5394 22.8427 23.2718 22.9099 23 22.9099C22.7282 22.9099 22.4606 22.8427 22.2213 22.7144L0.844428 11.2484L0 10.7804Z"
+                        fill="#B8B8B8" fill-opacity="0.55" />
+                </svg>
+                </svg>
+                <svg width="30" height="25" viewBox="0 0 39 39" fill="none" "
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.5046 0.00239919C22.9275 -0.00306106 24.3504 0.01124 25.773 0.0452979L26.1512 0.0589474C26.588 0.0745468 27.0189 0.0940461 27.5396 0.117445C29.6143 0.214942 31.0299 0.542531 32.272 1.02416C33.5589 1.51945 34.6431 2.19022 35.7272 3.27439C36.7185 4.24859 37.4857 5.42701 37.9754 6.72772C38.4571 7.96983 38.7846 9.38743 38.8821 11.4622C38.9055 11.9808 38.925 12.4137 38.9406 12.8505L38.9523 13.2288C38.987 14.6507 39.0019 16.073 38.9972 17.4953L38.9991 18.9499V21.5043C39.0039 22.9273 38.989 24.3502 38.9543 25.7727L38.9426 26.151C38.927 26.5878 38.9075 27.0187 38.8841 27.5394C38.7866 29.6141 38.4551 31.0297 37.9754 32.2719C37.4873 33.5739 36.7199 34.7533 35.7272 35.7271C34.7522 36.7183 33.5732 37.4855 32.272 37.9754C31.0299 38.457 29.6143 38.7846 27.5396 38.8821C27.0189 38.9055 26.588 38.925 26.1512 38.9406L25.773 38.9523C24.3505 38.987 22.9275 39.0019 21.5046 38.9972L20.05 38.9991H17.4976C16.0747 39.0039 14.6517 38.989 13.2292 38.9543L12.851 38.9426C12.3881 38.9258 11.9253 38.9063 11.4626 38.8841C9.38794 38.7866 7.97232 38.4551 6.72828 37.9754C5.42708 37.4866 4.24847 36.7193 3.27501 35.7271C2.2826 34.7527 1.51468 33.5735 1.02482 32.2719C0.543197 31.0297 0.215614 29.6141 0.118119 27.5394C0.0964028 27.0767 0.0769036 26.6139 0.059622 26.151L0.0498728 25.7727C0.0139236 24.3502 -0.0023273 22.9273 0.00112509 21.5043V17.4953C-0.00431701 16.073 0.00998378 14.6507 0.044023 13.2288L0.0576723 12.8505C0.0732715 12.4137 0.0927704 11.9808 0.116169 11.4622C0.213664 9.38548 0.541247 7.97178 1.02287 6.72772C1.51302 5.42637 2.28244 4.24827 3.27696 3.27634C4.24975 2.28334 5.42762 1.51471 6.72828 1.02416C7.97232 0.542531 9.38599 0.214942 11.4626 0.117445L12.851 0.0589474L13.2292 0.0491979C14.6511 0.0132661 16.0733 -0.00298506 17.4956 0.000449397L21.5046 0.00239919ZM19.5001 9.75207C18.2083 9.7338 16.9258 9.97246 15.727 10.4542C14.5283 10.9359 13.4372 11.6511 12.5172 12.5581C11.5973 13.4652 10.8667 14.5461 10.3681 15.7379C9.86952 16.9298 9.61275 18.2088 9.61275 19.5008C9.61275 20.7927 9.86952 22.0718 10.3681 23.2636C10.8667 24.4555 11.5973 25.5363 12.5172 26.4434C13.4372 27.3505 14.5283 28.0656 15.727 28.5473C16.9258 29.0291 18.2083 29.2677 19.5001 29.2495C22.0859 29.2495 24.5657 28.2223 26.3941 26.3938C28.2224 24.5654 29.2496 22.0856 29.2496 19.4998C29.2496 16.914 28.2224 14.4341 26.3941 12.6057C24.5657 10.7773 22.0859 9.75207 19.5001 9.75207ZM19.5001 13.6519C20.2772 13.6376 21.0493 13.7783 21.7714 14.0657C22.4934 14.3532 23.151 14.7816 23.7056 15.326C24.2603 15.8705 24.7008 16.52 25.0017 17.2366C25.3025 17.9532 25.4575 18.7226 25.4576 19.4998C25.4577 20.277 25.303 21.0464 25.0024 21.7631C24.7018 22.4798 24.2615 23.1295 23.707 23.6741C23.1526 24.2187 22.4951 24.6474 21.7732 24.935C21.0512 25.2227 20.2791 25.3636 19.5021 25.3496C17.9506 25.3496 16.4627 24.7333 15.3657 23.6362C14.2687 22.5392 13.6524 21.0513 13.6524 19.4998C13.6524 17.9483 14.2687 16.4604 15.3657 15.3634C16.4627 14.2663 17.9506 13.65 19.5021 13.65L19.5001 13.6519ZM29.7371 6.82717C29.108 6.85234 28.5131 7.11995 28.077 7.57394C27.6408 8.02792 27.3972 8.63307 27.3972 9.26263C27.3972 9.8922 27.6408 10.4973 28.077 10.9513C28.5131 11.4053 29.108 11.6729 29.7371 11.6981C30.3835 11.6981 31.0035 11.4413 31.4606 10.9842C31.9177 10.5271 32.1745 9.90713 32.1745 9.26068C32.1745 8.61424 31.9177 7.99427 31.4606 7.53717C31.0035 7.08007 30.3835 6.82327 29.7371 6.82327V6.82717Z"
+                        fill="#C6C6C6" fill-opacity="0.37" />
+                </svg>
+                </svg>
+                <svg width="30" height="25" viewBox="0 0 41 36" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.43666 2.08454C3.82736 2.03998 4.22304 2.10106 4.58093 2.26117C4.93882 2.42129 5.24531 2.67434 5.46727 2.99299C8.65236 7.56486 12.4762 9.46646 16.7208 9.89845C16.928 8.11755 17.4179 6.35784 18.3393 4.80776C19.6901 2.53347 21.8869 0.860573 25.0245 0.242236C29.362 -0.61327 32.6636 0.928336 34.5777 2.81511L38.4447 2.10572C38.8493 2.03131 39.2672 2.07205 39.649 2.22313C40.0309 2.37421 40.3607 2.62932 40.5996 2.95836C40.8385 3.2874 40.9764 3.67662 40.9972 4.08011C41.018 4.4836 40.9208 4.8845 40.717 5.23552L37.0053 11.6349C37.3441 20.8697 34.7287 27.3156 29.1526 31.7562C26.1963 34.111 21.9624 35.4472 17.3164 35.8601C12.6337 36.2752 7.34035 35.7733 2.07933 34.2656C1.62982 34.1369 1.23515 33.8682 0.954891 33.5001C0.674631 33.132 0.523986 32.6845 0.525692 32.225C0.527397 31.7655 0.68136 31.319 0.964345 30.9529C1.24733 30.5868 1.64398 30.321 2.09443 30.1956C4.74005 29.4565 6.75555 28.8191 8.57468 27.7032C5.98733 26.3564 4.08188 24.5945 2.73318 22.5871C0.860103 19.7961 0.165251 16.6832 0.027144 13.8774C-0.110963 11.0716 0.3012 8.47119 0.737101 6.59713C0.985262 5.52774 1.27442 4.45624 1.67364 3.43133C1.81446 3.07004 2.05343 2.75351 2.36461 2.51609C2.6758 2.27866 3.04515 2.12941 3.43666 2.08454Z"
+                        fill="#C6C1C1" fill-opacity="0.31" />
+                </svg>
+                </svg>
+            </div>
+        </div>  
+    </footer>
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content"><span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 style="color: #000;">Email Newsletter</h2>
+        </div>
+        <!-- Javascript Section-->
+        <script>
+            function closeNav() {
+                var myNav = document.getElementById("myNav");
+                myNav.style.display = "none";
+            }
+            function scrollToSection(sectionId) {
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            // Function to Open Modal
+            function openModal() {
+                document.getElementById('myModal').style.display = "block";
+            }
+            // Function to Close Modal
+            function closeModal() {
+                document.getElementById('myModal').style.display = "none";
+            }
+            // Background color change effect on scroll
+            const aboutUsSection = document.getElementById('seo_beyong');
+            const seoBeyondSection = document.getElementById('creative-web');
+            const socialAmplificationSection = document.getElementById('social-amplification');
+            const digitalizationDeluxeSection = document.getElementById('digitalization-deluxe');
+            const creativeDesignSection = document.getElementById('contact_footer');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY >= aboutUsSection.offsetTop) {
+                    aboutUsSection.style.backgroundColor = '#FF7C00';
+                } else {
+                    aboutUsSection.style.backgroundColor = '#171316';
+                }
+                if (window.scrollY >= seoBeyondSection.offsetTop) {
+                    seoBeyondSection.style.backgroundColor = '#F19222';
+                    seoBeyondSection.style.color = 'white';
+                } else {
+                    seoBeyondSection.style.backgroundColor = '#FF7C00';
+                    seoBeyondSection.style.color = 'white';
+                }
+                if (window.scrollY >= socialAmplificationSection.offsetTop) {
+                    socialAmplificationSection.style.backgroundColor = '#356FFF';
+                    socialAmplificationSection.style.color = 'white';
+                } else {
+                    socialAmplificationSection.style.backgroundColor = '#F19222';
+                    socialAmplificationSection.style.color = 'white';
+                }
+                if (window.scrollY >= digitalizationDeluxeSection.offsetTop) {
+                    digitalizationDeluxeSection.style.backgroundColor = '#171316';
+                    digitalizationDeluxeSection.style.color = 'white';
+                } else {
+                    digitalizationDeluxeSection.style.backgroundColor = '#356FFF';
+                    digitalizationDeluxeSection.style.color = 'white';
+                }
+                if (window.scrollY >= creativeDesignSection.offsetTop) {
+                    creativeDesignSection.style.backgroundColor = '#171316';
+                    creativeDesignSection.style.color = 'black';
+                } else {
+                    creativeDesignSection.style.backgroundColor = 'green';
+                    creativeDesignSection.style.color = 'white';
+                }
+            });
+            function openNav() {
+                document.getElementById("myNav").style.width = "100%";
+            }
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+            const slider = document.querySelector('.complete_box')
+            const box_cards = document.querySelector('.box_cards')
+            let isPressed = false;
+            let cursorX;
+            slider.addEventListener("mousedown", (e) => {
+                isPressed = true;
+                cursorX = e.offsetX - box_cards.offsetLeft;
+                slider.style.cursor = "grabbing";
+            });
+            slider.addEventListener("mouseup", () => {
+                slider.style.cursor = "grab";
+            });
+            window.addEventListener("mouseup", () => {
+                isPressed = false;
+            });
+            slider.addEventListener("mousemove", (e) => {
+                if (!isPressed) return;
+                e.preventDefault();
+                box_cards.style.left = `${e.offsetX - cursorX}px`;
+                boundSlides();
+            });
+            function boundSlides() {
+                const complete_boxRect = slider.getBoundingClientRect();
+                const box_cardsRect = box_cards.getBoundingClientRect();
+                console.log(box_cardsRect)
+                if (parseInt(box_cards.style.left) > 0) {
+                    box_cards.style.left = 0;
+                } else if (box_cardsRect.right < complete_boxRect.right) {
+                    box_cards.style.left = `-${box_cardsRect.width - complete_boxRect.width}px`;
+                }
+            }
+        </script>
+</body>
+</html>
