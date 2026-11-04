@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabeela Rafi — Full Stack Developer</title>
+  <meta name="description" content="Nabeela Rafi — Full stack developer building web platforms, mobile app backends, payments and AI integrations with Laravel, Node.js, React and Python." />
+  <meta property="og:title" content="Nabeela Rafi — Full Stack Developer" />
+  <meta property="og:description" content="Web platforms, mobile app backends, payments and AI integrations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Nabeela<span>.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact" class="btn btn-sm">Hire Me</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="badge"><span class="dot"></span> Available for freelance &amp; contract work</p>
+        <h1>I build reliable web platforms, <span class="accent">mobile backends</span> &amp; AI-powered products.</h1>
+        <p class="lead">I'm <strong>Nabeela Rafi</strong>, a full stack developer from Pakistan. I help startups and businesses ship production-ready apps — from secure APIs and admin dashboards to payments, subscriptions and AI features.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+        </div>
+        <ul class="stats">
+          <li><strong>10+</strong><span>Production projects</span></li>
+          <li><strong>5+</strong><span>Industries served</span></li>
+          <li><strong>24/7</strong><span>Client support</span></li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div class="avatar">NR</div>
+        <h3>Nabeela Rafi</h3>
+        <p>Full Stack Developer</p>
+        <div class="stack-chips">
+          <span>Laravel</span><span>Node.js</span><span>React</span><span>Python</span><span>PostgreSQL</span><span>OpenAI</span>
+        </div>
+        <a href="assets/Nabeela-Rafi-CV.pdf" class="btn btn-block" download>Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div>
+        <p class="eyebrow">About Me</p>
+        <h2>Turning business ideas into working software.</h2>
+      </div>
+      <div>
+        <p>I'm a full stack developer with a Bachelor's degree from International Islamic University, Islamabad. I work across the full product — database design, REST APIs, admin panels, React front-ends and third-party integrations.</p>
+        <p>I've delivered platforms in <strong>fintech, e-learning, travel &amp; hospitality, media, fashion-tech and entertainment</strong>, including AI-driven decision tools, face-recognition photo systems, hotel booking marketplaces and subscription apps for iOS and Android.</p>
+        <p>I care about clean code, clear communication and shipping on time — so you always know where your project stands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section alt" id="services">
+    <div class="container">
+      <p class="eyebrow center">Services</p>
+      <h2 class="center">How I can help your business</h2>
+      <div class="grid grid-3">
+        <article class="card service">
+          <div class="icon">&lt;/&gt;</div>
+          <h3>Full Stack Web Apps</h3>
+          <p>End-to-end web platforms with Laravel, Node.js and React — user portals, booking systems and SaaS products.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">⇄</div>
+          <h3>APIs for Mobile Apps</h3>
+          <p>Secure REST APIs for iOS &amp; Android with authentication, push notifications and App Store / Google Play subscriptions.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">✦</div>
+          <h3>AI Integrations</h3>
+          <p>OpenAI-powered assistants, document extraction, OCR and smart recommendations built into your product.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">$</div>
+          <h3>Payments &amp; Subscriptions</h3>
+          <p>Stripe, PayPal, Razorpay, Apple Pay and in-app purchases with webhooks, renewals and commissions.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">▤</div>
+          <h3>Admin Dashboards</h3>
+          <p>Role-based admin panels with analytics, user management, support tickets and content management.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">☁</div>
+          <h3>Deployment &amp; Maintenance</h3>
+          <p>CI/CD with GitHub Actions, cloud storage (S3/Wasabi, Bunny.net), bug fixing and ongoing support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="eyebrow center">Portfolio</p>
+      <h2 class="center">Selected projects</h2>
+      <p class="sub center">Real client work delivered in production. Source code is private — detailed walkthroughs available on request.</p>
+
+      <div class="filters" id="filters">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="ai">AI &amp; Fintech</button>
+        <button data-filter="web">Web Platforms</button>
+        <button data-filter="mobile">Mobile Backends</button>
+      </div>
+
+      <div class="grid grid-3" id="projectGrid">
+
+        <article class="card project" data-cat="ai">
+          <div class="p-head"><span class="p-tag">AI · Fintech</span><span class="p-live">Live</span></div>
+          <h3>Credit Brain — AI Lender Matching</h3>
+          <p>An equipment-finance platform that evaluates borrower deals and matches them to the best lender programs in Tier 1/2/3 with clear explanations.</p>
+          <ul>
+            <li>AI tiering engine with rule-based safety checks</li>
+            <li>AI sales-coach chat with voice &amp; file support</li>
+            <li>Excel import for lenders and programs</li>
+          </ul>
+          <div class="tech"><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>FastAPI</span><span>OpenAI</span></div>
+        </article>
+
+        <article class="card project" data-cat="ai">
+          <div class="p-head"><span class="p-tag">AI · Fintech</span></div>
+          <h3>Credit Application &amp; KYC Engine</h3>
+          <p>Automates credit-application review: reads uploaded documents, extracts and verifies data, and produces ready-to-send application packages.</p>
+          <ul>
+            <li>AI + OCR document extraction &amp; verification</li>
+            <li>Experian credit bureau integration</li>
+            <li>PDF/Excel reports, email &amp; Google Drive export</li>
+          </ul>
+          <div class="tech"><span>Node.js</span><span>PostgreSQL</span><span>OpenAI</span><span>Tesseract</span><span>Puppeteer</span></div>
+        </article>
+
+        <article class="card project" data-cat="web">
+          <div class="p-head"><span class="p-tag">Entertainment</span><span class="p-live">Live</span></div>
+          <h3>Theme Park Photo Platform</h3>
+          <p>Guests find their park photos with face recognition, then buy digital copies or on-site prints with custom frames.</p>
+          <ul>
+            <li>Face search with InsightFace + FAISS</li>
+            <li>Stripe payments, invoices &amp; print-ready PDFs</li>
+            <li>Staff analytics &amp; automated CI/CD deploys</li>
+          </ul>
+          <div class="tech"><span>Node.js</span><span>MongoDB</span><span>Python</span><span>Stripe</span><span>Wasabi S3</span></div>
+        </article>
+
+        <article class="card project" data-cat="web">
+          <div class="p-head"><span class="p-tag">Travel · Marketplace</span></div>
+          <h3>Explore Cambodia — Hotel Booking</h3>
+          <p>A hotel booking marketplace with user web app, hotel owner panel and admin panel — from search to booking to payment.</p>
+          <ul>
+            <li>Hotel import &amp; "claim your hotel" flow for owners</li>
+            <li>Stripe payments with platform commission</li>
+            <li>Favourites, reviews, tickets &amp; notifications</li>
+          </ul>
+          <div class="tech"><span>Laravel 12</span><span>React</span><span>Vite</span><span>Tailwind</span><span>Stripe</span></div>
+        </article>
+
+        <article class="card project" data-cat="mobile ai">
+          <div class="p-head"><span class="p-tag">Fashion · AI</span></div>
+          <h3>FitCheck — AI Outfit Generator</h3>
+          <p>Backend for an iOS &amp; Android wardrobe app. Users upload clothes; AI analyses them and generates complete outfit images from a prompt.</p>
+          <ul>
+            <li>AI clothing analysis &amp; outfit image generation</li>
+            <li>App Store &amp; Google Play subscriptions</li>
+            <li>Weather-based outfit suggestions</li>
+          </ul>
+          <div class="tech"><span>Node.js</span><span>MongoDB</span><span>JWT</span><span>In-App Purchases</span></div>
+        </article>
+
+        <article class="card project" data-cat="mobile">
+          <div class="p-head"><span class="p-tag">E-Learning</span></div>
+          <h3>LearnKD — Online Course Platform</h3>
+          <p>Course platform and mobile API with categories, courses, weekly lessons and streamed video, sold through premium plans.</p>
+          <ul>
+            <li>Apple &amp; Google Play IAP with server webhooks</li>
+            <li>Apple Pay checkout via Stripe</li>
+            <li>Video hosting &amp; streaming on Bunny.net</li>
+          </ul>
+          <div class="tech"><span>Laravel</span><span>Passport</span><span>Stripe</span><span>Bunny.net</span></div>
+        </article>
+
+        <article class="card project" data-cat="mobile">
+          <div class="p-head"><span class="p-tag">E-Learning</span></div>
+          <h3>Language Learning App</h3>
+          <p>Admin panel and mobile API for a language course app with daily lessons, quizzes and progress tracking.</p>
+          <ul>
+            <li>Courses, lessons &amp; quizzes with progress</li>
+            <li>Premium subscriptions with auto-expiry emails</li>
+            <li>Firebase push notifications &amp; PDF certificates</li>
+          </ul>
+          <div class="tech"><span>Laravel 11</span><span>Sanctum</span><span>MySQL</span><span>FCM</span></div>
+        </article>
+
+        <article class="card project" data-cat="web mobile">
+          <div class="p-head"><span class="p-tag">Media</span></div>
+          <h3>TECH AI Magazine</h3>
+          <p>Admin panel and REST API for a digital magazine with articles, news, videos and PDF issues behind paid subscriptions.</p>
+          <ul>
+            <li>Stripe, PayPal &amp; Razorpay subscriptions</li>
+            <li>WordPress &amp; YouTube content integration</li>
+            <li>Coupons, bookmarks &amp; push notifications</li>
+          </ul>
+          <div class="tech"><span>Laravel 11</span><span>MySQL</span><span>Bootstrap</span><span>REST API</span></div>
+        </article>
+
+        <article class="card project" data-cat="web ai">
+          <div class="p-head"><span class="p-tag">SaaS · Admin</span></div>
+          <h3>Admin Panel &amp; Analytics API</h3>
+          <p>A Node.js admin backend running alongside an existing Django product, giving the team full control over users and support.</p>
+          <ul>
+            <li>Role-based access, user management &amp; activity logs</li>
+            <li>Support tickets &amp; push/email/SMS notifications</li>
+            <li>Dashboards, analytics &amp; AI chat integration</li>
+          </ul>
+          <div class="tech"><span>Node.js</span><span>PostgreSQL</span><span>Firebase</span><span>Twilio</span></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section alt" id="skills">
+    <div class="container">
+      <p class="eyebrow center">Skills</p>
+      <h2 class="center">Technologies I work with</h2>
+      <div class="grid grid-4">
+        <div class="card skill-group">
+          <h3>Frontend</h3>
+          <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Tailwind CSS</span><span>Bootstrap</span><span>Vite</span></div>
+        </div>
+        <div class="card skill-group">
+          <h3>Backend</h3>
+          <div class="chips"><span>PHP</span><span>Laravel</span><span>Node.js</span><span>Express</span><span>Python</span><span>Django</span><span>FastAPI</span></div>
+        </div>
+        <div class="card skill-group">
+          <h3>Databases</h3>
+          <div class="chips"><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span></div>
+        </div>
+        <div class="card skill-group">
+          <h3>Integrations &amp; Tools</h3>
+          <div class="chips"><span>OpenAI</span><span>Stripe</span><span>PayPal</span><span>App Store / Play IAP</span><span>Firebase</span><span>AWS S3</span><span>Git</span><span>GitHub Actions</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOURNEY ===== -->
+  <section class="section" id="journey">
+    <div class="container narrow">
+      <p class="eyebrow center">Journey</p>
+      <h2 class="center">Experience &amp; education</h2>
+      <ol class="timeline">
+        <li>
+          <span class="when">2025 — Present</span>
+          <h3>Full Stack Developer</h3>
+          <p class="where">Classic Programmers</p>
+          <p>Building and maintaining client platforms in fintech, travel, e-learning and media — APIs, admin panels, payments and AI features.</p>
+        </li>
+        <li>
+          <span class="when">2018 — 2023</span>
+          <h3>Bachelor's Degree</h3>
+          <p class="where">International Islamic University, Islamabad</p>
+        </li>
+        <li>
+          <span class="when">2020</span>
+          <h3>Web Development Certification</h3>
+          <p class="where">DigiSkills Institute</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container contact">
+      <div>
+        <p class="eyebrow light">Contact</p>
+        <h2>Have a project in mind? Let's build it together.</h2>
+        <p class="muted">Tell me about your idea, timeline and budget. I usually reply within 24 hours.</p>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:nabeela1492000@gmail.com">nabeela1492000@gmail.com</a></li>
+          <li><span>WhatsApp</span><a href="https://wa.me/923417501284" target="_blank" rel="noopener">+92 341 7501284</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/nabeela-rafi" target="_blank" rel="noopener">View profile</a></li>
+          <li><span>GitHub</span><a href="https://github.com/nabeela-rafi" target="_blank" rel="noopener">github.com/nabeela-rafi</a></li>
+        </ul>
+      </div>
+      <form class="form" id="contactForm">
+        <label>Your name<input name="name" required /></label>
+        <label>Your email<input name="email" type="email" required /></label>
+        <label>Project details<textarea name="message" rows="5" required placeholder="What would you like to build?"></textarea></label>
+        <button class="btn btn-block" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Nabeela Rafi. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
